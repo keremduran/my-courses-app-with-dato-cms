@@ -1,11 +1,12 @@
 import { gql, GraphQLClient } from 'graphql-request';
+import CourseSection from '../components/CourseSection';
 
 export default function Home({ course }) {
-  console.log(course);
+  console.log('HOME FUNC COURSE: ', course);
   return (
     <div className=''>
-      {course.courseDetail.map((sec) => (
-        <CourseSection details={section} key={section.id} />
+      {course.courseDetail.map((section) => (
+        <CourseSection detail={section} key={section.id} />
       ))}
     </div>
   );
@@ -17,7 +18,7 @@ const query = gql`
       id
       name
       slug
-      courseDetails {
+      courseDetail {
         ... on CourseHeaderRecord {
           __typename
           bigtitle
