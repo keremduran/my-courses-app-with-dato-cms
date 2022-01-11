@@ -15,7 +15,7 @@ export default function CourseSection({ details }) {
   };
 
   const DynamicComponent = components[details.__typename];
-  return <DynamicComponent details={details} />;
+  return <DynamicComponent id='dynamic_component' details={details} />;
   // switch (details.__typename) {
   //   case 'CourseHeaderRecord':
   //     return <CourseHeaderRecord details={details} />;
