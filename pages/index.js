@@ -6,7 +6,7 @@ export default function Home({ course }) {
   return (
     <div className=''>
       {course.courseDetail.map((section) => (
-        <CourseSection detail={section} key={section.id} />
+        <CourseSection details={section} key={section.id} />
       ))}
     </div>
   );
