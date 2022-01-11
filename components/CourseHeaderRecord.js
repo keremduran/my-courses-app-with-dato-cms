@@ -1,6 +1,15 @@
 import React from 'react';
-import { Flex, Box, Center, Heading, Text, Container } from '@chakra-ui/react';
+import {
+  Flex,
+  Box,
+  Center,
+  Heading,
+  Text,
+  Container,
+  Button,
+} from '@chakra-ui/react';
 export default function CourseHeaderRecord({ details }) {
+  console.log(details);
   return (
     <Flex
       direction='column'
@@ -11,28 +20,37 @@ export default function CourseHeaderRecord({ details }) {
       py='20'
       py='10'
     >
-      <Heading
-        size='lg'
-        id='small-title'
-        color='gray.600'
-        fontWeight='extrabold'
-      >
-        {details.smalltitle}
+      <Heading size='lg' id='small-title' color='gray.600' fontWeight='bold'>
+        {details.smallTitle}
         <Text
           as='span'
           display='block'
           fontSize='6xl'
           id='big-title'
           color='gray.900'
-          fontWeight='bold'
           mb='10'
         >
-          {details.bigtitle}
+          {details.bigTitle}
         </Text>
       </Heading>
-      <Container bg='yellow.300' maxW='container.md'>
-        <Text fontSize='lg'>{details.description}</Text>
+      <Container maxW='container.md'>
+        <Text fontSize='md' color='gray.600'>
+          {details.description}
+        </Text>
       </Container>
+      <Button
+        as='a'
+        href='#Pricing'
+        bg='yellow.300'
+        mt='8'
+        py='3'
+        px='4'
+        color='gray'
+        fontSize='lg'
+        className=''
+      >
+        {details.buttonText}
+      </Button>
     </Flex>
   );
 }
