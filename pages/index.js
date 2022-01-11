@@ -21,10 +21,50 @@ const query = gql`
       courseDetail {
         ... on CourseHeaderRecord {
           __typename
-          bigtitle
-          smalltitle
+          bigTitle
+          smallTitle
           description
           id
+          buttonText
+        }
+        ... on CalloutRecord {
+          __typename
+          bigTitle
+          smallTitle
+          description
+          id
+          image {
+            url
+            width
+            height
+          }
+        }
+        ... on LearningSectionRecord {
+          __typename
+          hoursOfConent
+          numberOfLessons
+          title
+          id
+          learningPoints {
+            title
+            id
+          }
+        }
+        ... on PricingSectionRecord {
+          __typename
+          title
+          id
+          pricingCards {
+            isFree
+            priceInCents
+            priceSuffix
+            title
+            id
+            description
+            finePrint
+            featured
+            buttonText
+          }
         }
       }
     }
