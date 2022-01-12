@@ -7,9 +7,10 @@ import {
   Text,
   Container,
   Button,
+  Grid,
+  GridItem,
 } from '@chakra-ui/react';
 export default function CourseHeaderRecord({ details }) {
-  console.log(details);
   return (
     <Flex
       direction='column'

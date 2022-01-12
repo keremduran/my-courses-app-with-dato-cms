@@ -1,20 +1,19 @@
 import React from 'react';
 import CourseHeaderRecord from './CourseHeaderRecord';
 import CalloutRecord from './CalloutRecord';
-import LearnSectionRecord from './LearnSectionRecord';
+import LearningSectionRecord from './LearningSectionRecord';
 import PricingSectionRecord from './PricingSectionRecord';
 
 export default function CourseSection({ details }) {
-  console.log(details);
-
   const components = {
     CourseHeaderRecord,
     CalloutRecord,
-    LearnSectionRecord,
+    LearningSectionRecord,
     PricingSectionRecord,
   };
 
   const DynamicComponent = components[details.__typename];
+
   return <DynamicComponent id='dynamic_component' details={details} />;
   // switch (details.__typename) {
   //   case 'CourseHeaderRecord':
